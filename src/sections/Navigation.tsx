@@ -138,7 +138,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
               </a>
               <Button
                 onClick={() => scrollToSection({ id: 'contact' })}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium px-6 py-2 rounded-full transition-all duration-300 hover:shadow-glow"
+                className="bg-white text-navy-950 hover:bg-slate-100 font-semibold px-6 py-2 rounded-lg transition-colors border border-transparent shadow-sm hover:shadow-md"
               >
                 Start Project
               </Button>

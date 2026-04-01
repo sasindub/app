@@ -1,8 +1,8 @@
-import { 
-  Linkedin, 
-  Facebook, 
-  MessageCircle, 
-  Mail, 
+import {
+  Linkedin,
+  Facebook,
+  MessageCircle,
+  Mail,
   Phone,
   MapPin,
   ArrowUp,
@@ -76,22 +76,19 @@ const Footer = () => {
                 className="flex items-center gap-3 mb-6"
               >
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10">
-                  <img 
-                    src="/logo.png" 
-                    alt="TIOSS Logo" 
+                  <img
+                    src="/logo.png"
+                    alt="TIOSS Logo"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <div>
-                  <span className="text-white font-heading font-bold text-xl">TIOSS</span>
-                  <span className="block text-cyan-400 text-[10px] -mt-1 tracking-wider">
-                    The Icon of Software Solutions
-                  </span>
+
                 </div>
               </button>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Sri Lanka&apos;s premier software development company, specializing in 
+                Sri Lanka&apos;s premier software development company, specializing in
                 web applications, AI solutions, and digital transformation.
               </p>
               {/* Social Links */}

@@ -14,7 +14,7 @@ const WebDevelopmentSriLanka = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white">
-              Premier <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Web Development Company</span> in Sri Lanka
+              Premier <span className="text-slate-300">Web Development Company</span> in Sri Lanka
             </h1>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
               Transforming businesses with cutting-edge web development, intelligent applications, and immersive digital experiences. We are TIOSS Solutions.

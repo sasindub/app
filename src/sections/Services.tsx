@@ -50,7 +50,7 @@ const Services = () => {
         'API Development & Integration',
         'Progressive Web Apps',
       ],
-      color: 'from-cyan-400 to-cyan-600',
+      color: 'text-navy-300',
       bgColor: 'bg-cyan-500/10',
     },
     {
@@ -66,7 +66,7 @@ const Services = () => {
         'Natural Language Processing',
         'AI-Powered Analytics',
       ],
-      color: 'from-blue-400 to-blue-600',
+      color: 'text-navy-300',
       bgColor: 'bg-blue-500/10',
     },
     {
@@ -147,7 +147,7 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Expertise</span>
+            Our <span className="text-slate-300">Expertise</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We offer comprehensive software development services tailored to your business needs, 
@@ -171,7 +171,7 @@ const Services = () => {
             >
               <div className="flex items-start gap-5">
                 <div className={`w-14 h-14 rounded-xl ${service.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                  <service.icon className={`w-7 h-7 bg-gradient-to-r ${service.color} bg-clip-text`} style={{ color: 'inherit' }} />
+                  <service.icon className={`w-7 h-7 ${service.color}`} style={{ color: 'inherit' }} />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
@@ -223,7 +223,7 @@ const Services = () => {
                   enhance customer experiences, and drive growth.
                 </p>
                 <Button
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:shadow-glow"
+                  className="bg-white text-navy-950 hover:bg-slate-100 font-semibold px-6 py-3 rounded-lg transition-colors border border-transparent shadow-sm hover:shadow-md"
                 >
                   Explore AI Solutions
                   <ArrowRight className="w-4 h-4 ml-2" />

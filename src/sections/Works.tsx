@@ -94,7 +94,7 @@ const Works = () => {
               Portfolio
             </span>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Works</span>
+              Selected <span className="text-slate-300">Works</span>
             </h2>
           </div>
           <p className="text-slate-400 text-lg max-w-md">
@@ -172,7 +172,7 @@ const Works = () => {
                 </div>
 
                 <Button
-                  className="w-fit bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium px-6 py-3 rounded-full transition-all duration-300 hover:shadow-glow group"
+                  className="w-fit bg-white text-navy-950 hover:bg-slate-100 font-semibold px-6 py-3 rounded-lg transition-colors border border-transparent shadow-sm hover:shadow-md group"
                 >
                   View Case Study
                   <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

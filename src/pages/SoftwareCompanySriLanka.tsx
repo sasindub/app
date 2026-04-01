@@ -14,7 +14,7 @@ const SoftwareCompanySriLanka = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white">
-              Leading <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Software Company</span> in Sri Lanka
+              Leading <span className="text-slate-300">Software Company</span> in Sri Lanka
             </h1>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
               Empowering global enterprises with robust, scalable, and innovative software solutions designed by top-tier Sri Lankan engineering talent.

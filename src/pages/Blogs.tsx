@@ -92,8 +92,8 @@ const blogs = [
 ]
 
 const colorClasses = {
-  cyan: 'from-cyan-900/40 text-cyan-400 group-hover:border-cyan-500/50 group-hover:text-cyan-300',
-  blue: 'from-blue-900/40 text-blue-400 group-hover:border-blue-500/50 group-hover:text-blue-300',
+  cyan: 'bg-navy-800/40 text-navy-300 group-hover:border-navy-500/50 group-hover:text-white',
+  blue: 'bg-navy-800/40 text-navy-300 group-hover:border-navy-500/50 group-hover:text-white',
   indigo: 'from-indigo-900/40 text-indigo-400 group-hover:border-indigo-500/50 group-hover:text-indigo-300',
   purple: 'from-purple-900/40 text-purple-400 group-hover:border-purple-500/50 group-hover:text-purple-300',
 }
@@ -112,7 +112,7 @@ const Blogs = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white">
-              TIOSS <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Insights & Blogs</span>
+              TIOSS <span className="text-slate-300">Insights & Blogs</span>
             </h1>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
               Dive deep into the world of web engineering, artificial intelligence, and digital growth with complete, in-depth articles from our senior technical experts.

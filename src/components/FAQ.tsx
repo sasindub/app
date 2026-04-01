@@ -6,7 +6,7 @@ const FAQ = () => {
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Questions</span>
+            Frequently Asked <span className="text-slate-300">Questions</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Everything you need to know about our web development, AI, and enterprise software services.

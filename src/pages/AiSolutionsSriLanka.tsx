@@ -14,7 +14,7 @@ const AiSolutionsSriLanka = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white">
-              Innovative <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">AI Solutions</span> in Sri Lanka
+              Innovative <span className="text-slate-300">AI Solutions</span> in Sri Lanka
             </h1>
             <p className="text-lg text-slate-400 max-w-3xl mx-auto">
               Unlock the power of Artificial Intelligence to automate workflows, glean insights, and build truly intelligent applications.

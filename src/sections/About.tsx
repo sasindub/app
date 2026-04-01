@@ -68,7 +68,7 @@ const About = () => {
             About Us
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Who We <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Are</span>
+            Who We <span className="text-slate-300">Are</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             We are a collective of coders, designers, and visionaries based in Sri Lanka. 
@@ -86,7 +86,7 @@ const About = () => {
           >
             <div className="relative">
               {/* Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl blur-2xl" />
+              <div className="absolute -inset-4 bg-navy-800/30 rounded-3xl blur-2xl" />
               
               {/* Image Container */}
               <div className="relative rounded-3xl overflow-hidden border border-cyan-500/20">
@@ -102,7 +102,7 @@ const About = () => {
               {/* Floating Stats Card */}
               <div className="absolute -bottom-6 -right-6 glass-card rounded-2xl p-6 max-w-xs">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-navy-800 border border-white/10 flex items-center justify-center">
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -190,7 +190,7 @@ const About = () => {
                 key={index}
                 className="glass-card rounded-2xl p-6 card-hover group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-5 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all">
+                <div className="w-14 h-14 rounded-xl bg-navy-800/30 border border-white/10 flex items-center justify-center mb-5 group-hover:bg-navy-700/50 group-hover:border-white/20 transition-all">
                   <value.icon className="w-7 h-7 text-cyan-400" />
                 </div>
                 <h4 className="text-white font-heading font-semibold text-lg mb-3">

@@ -129,7 +129,7 @@ const Contact = () => {
             Get in Touch
           </span>
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Initiate <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Contact</span>
+            Initiate <span className="text-slate-300">Contact</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Ready to start your next project? Send us a signal. We&apos;re here to help 
@@ -304,7 +304,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium py-3 rounded-full transition-all duration-300 hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-white text-navy-950 hover:bg-slate-100 font-semibold py-3 rounded-lg transition-colors border border-transparent shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
