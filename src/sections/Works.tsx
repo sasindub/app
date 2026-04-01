@@ -117,6 +117,7 @@ const Works = () => {
                   src={projects[activeProject].image}
                   alt={projects[activeProject].title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-navy-950/40 lg:to-navy-950/80" />
                 
@@ -201,6 +202,7 @@ const Works = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">

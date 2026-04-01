@@ -42,12 +42,12 @@ const Footer = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/company/theiconofsoftwaresolutions/?viewAsMember=true',
+      href: 'https://www.linkedin.com/company/theiconofsoftwaresolutions/',
     },
     {
       icon: Facebook,
       label: 'Facebook',
-      href: 'https://web.facebook.com/theiconofsoftwaresolutions/?_rdc=1&_rdr#',
+      href: 'https://www.facebook.com/theiconofsoftwaresolutions/',
     },
     {
       icon: MessageCircle,
@@ -80,6 +80,7 @@ const Footer = () => {
                     src="/logo.png" 
                     alt="TIOSS Logo" 
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div>

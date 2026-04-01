@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -10,6 +11,8 @@ const Navigation = ({ scrollY }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const isScrolled = scrollY > 50
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const navLinks = [
     { id: 'home', label: 'Home' },
@@ -17,11 +20,24 @@ const Navigation = ({ scrollY }: NavigationProps) => {
     { id: 'services', label: 'Services' },
     { id: 'works', label: 'Our Works' },
     { id: 'contact', label: 'Contact' },
+    { id: '/blogs', label: 'Blogs', isRoute: true },
   ]
 
   useEffect(() => {
+    if (location.pathname !== '/') return
+
+    // If we have a hash from navigation, scroll to it on mount
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1))
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+
     const handleScroll = () => {
-      const sections = navLinks.map(link => document.getElementById(link.id))
+      const sections = navLinks.filter(l => !l.isRoute).map(link => document.getElementById(link.id))
       const scrollPosition = window.scrollY + 100
 
       sections.forEach((section, index) => {
@@ -29,7 +45,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
           const sectionTop = section.offsetTop
           const sectionHeight = section.offsetHeight
           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setActiveSection(navLinks[index].id)
+            setActiveSection(navLinks.filter(l => !l.isRoute)[index].id)
           }
         }
       })
@@ -37,13 +53,23 @@ const Navigation = ({ scrollY }: NavigationProps) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [location])
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
+  const scrollToSection = (link: { id: string, isRoute?: boolean }) => {
+    setIsMenuOpen(false)
+    
+    if (link.isRoute) {
+      navigate(link.id)
+      return
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/#' + link.id)
+    } else {
+      const element = document.getElementById(link.id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 
@@ -59,8 +85,11 @@ const Navigation = ({ scrollY }: NavigationProps) => {
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <button
-              onClick={() => scrollToSection('home')}
+            <Link
+              to="/"
+              onClick={() => {
+                if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
               className="flex items-center gap-3 group"
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden group-hover:shadow-glow transition-shadow duration-300 bg-white/10">
@@ -68,6 +97,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
                   src="/logo.png" 
                   alt="TIOSS Logo" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="hidden sm:block">
@@ -78,14 +108,14 @@ const Navigation = ({ scrollY }: NavigationProps) => {
                   The Icon of Software Solutions
                 </span>
               </div>
-            </button>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
-                  onClick={() => scrollToSection(link.id)}
+                  onClick={() => scrollToSection(link)}
                   className={`nav-link text-sm font-medium transition-colors duration-300 ${
                     activeSection === link.id
                       ? 'text-cyan-400'
@@ -107,7 +137,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
                 <span>+94 774 186 332</span>
               </a>
               <Button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection({ id: 'contact' })}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium px-6 py-2 rounded-full transition-all duration-300 hover:shadow-glow"
               >
                 Start Project
@@ -141,7 +171,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
             {navLinks.map((link, index) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => scrollToSection(link)}
                 className={`text-left py-3 px-4 rounded-xl transition-all duration-300 ${
                   activeSection === link.id
                     ? 'bg-cyan-500/20 text-cyan-400'

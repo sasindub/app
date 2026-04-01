@@ -94,6 +94,7 @@ const About = () => {
                   src="/about-team.jpg"
                   alt="TIOSS Team"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
               </div>

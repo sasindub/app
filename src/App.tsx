@@ -1,14 +1,25 @@
 import { useEffect, useState, useRef } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './App.css'
 import Navigation from './sections/Navigation'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Services from './sections/Services'
-import Works from './sections/Works'
-import Contact from './sections/Contact'
 import Footer from './sections/Footer'
+import Home from './pages/Home'
 
-function App() {
+// We will create these pages next
+import WebDevelopmentSriLanka from './pages/WebDevelopmentSriLanka'
+import SoftwareCompanySriLanka from './pages/SoftwareCompanySriLanka'
+import AiSolutionsSriLanka from './pages/AiSolutionsSriLanka'
+import Blogs from './pages/Blogs'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
+function Layout() {
   const [scrollY, setScrollY] = useState(0)
   const mainRef = useRef<HTMLDivElement>(null)
 
@@ -33,21 +44,28 @@ function App() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[150px]" />
       </div>
 
-      {/* Navigation */}
       <Navigation scrollY={scrollY} />
 
-      {/* Main Content */}
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Services />
-        <Works />
-        <Contact />
-      </main>
+      <ScrollToTop />
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/web-development-sri-lanka" element={<WebDevelopmentSriLanka />} />
+        <Route path="/software-company-sri-lanka" element={<SoftwareCompanySriLanka />} />
+        <Route path="/ai-solutions-sri-lanka" element={<AiSolutionsSriLanka />} />
+        <Route path="/blogs" element={<Blogs />} />
+      </Routes>
 
-      {/* Footer */}
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
   )
 }
 
