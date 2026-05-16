@@ -21,6 +21,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
     { id: 'works', label: 'Our Works' },
     { id: 'contact', label: 'Contact' },
     { id: '/blogs', label: 'Blogs', isRoute: true },
+    { id: '/promotions/gym-website-packages', label: 'Promotions', isRoute: true },
   ]
 
   useEffect(() => {
