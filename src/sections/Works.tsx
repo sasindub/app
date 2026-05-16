@@ -37,16 +37,6 @@ const Works = () => {
     // ── 1 ──
     {
       id: 1,
-      title: 'Mini Bazaar',
-      category: 'E-Commerce',
-      description: 'A feature-rich online marketplace built for seamless buying and selling, with product listings, search filters, and a clean mobile-first shopping experience.',
-      url: 'https://minibazaar-two.vercel.app/',
-      tags: ['E-Commerce', 'Marketplace', 'Responsive', 'SEO'],
-      stats: { type: 'Marketplace', design: 'Mobile-First' },
-    },
-    // ── 2 ──
-    {
-      id: 2,
       title: 'Mr. Tailor',
       category: 'Fashion & Services',
       description: 'A sleek tailoring services website showcasing custom clothing packages, fabric collections, and an easy inquiry flow to connect customers with expert tailors.',
@@ -54,49 +44,9 @@ const Works = () => {
       tags: ['Services', 'Fashion', 'Responsive', 'WhatsApp'],
       stats: { type: 'Service Site', turnaround: '5 Days' },
     },
-    // ── 3 ──
+    // ── 2 ──
     {
-      id: 3,
-      title: 'SNL.lk',
-      category: 'Corporate',
-      description: 'A professional corporate website for a leading Sri Lankan business, designed with credibility-focused UI, clean content hierarchy, and strong brand identity.',
-      url: 'https://www.snl.lk/',
-      tags: ['Corporate', 'Branding', 'SEO', 'Responsive'],
-      stats: { type: 'Corporate Site', market: 'Sri Lanka' },
-    },
-    // ── 4 ──
-    {
-      id: 4,
-      title: 'Techfore Store',
-      category: 'Technology / E-Commerce',
-      description: 'A modern tech product store with a structured product catalogue, category filtering, and a performance-optimised frontend built for high conversion rates.',
-      url: 'https://techfore-store-3pvk8106.devinapps.com/',
-      tags: ['E-Commerce', 'Tech Products', 'Performance', 'SEO'],
-      stats: { type: 'Tech Store', optimised: 'High-Speed' },
-    },
-    // ── 5 ──
-    {
-      id: 5,
-      title: 'Luma.lk',
-      category: 'Lifestyle & Retail',
-      description: 'An elegant lifestyle brand website for a Sri Lankan retailer, featuring product showcases, brand storytelling, and a refined visual experience that elevates the brand.',
-      url: 'https://www.luma.lk/',
-      tags: ['Lifestyle', 'Retail', 'Branding', 'Responsive'],
-      stats: { type: 'Brand Website', market: 'Sri Lanka' },
-    },
-    // ── 6 ──
-    {
-      id: 6,
-      title: 'OSRO Hospital',
-      category: 'Healthcare',
-      description: 'A professional private hospital website built to build patient trust, with department listings, doctor profiles, appointment inquiry forms, and a compassionate design language.',
-      url: 'https://osro-osro-hospital.vercel.app/',
-      tags: ['Healthcare', 'Hospital', 'Responsive', 'SEO'],
-      stats: { type: 'Private Hospital', sector: 'Healthcare' },
-    },
-    // ── 7 ── Iron Edge gym
-    {
-      id: 7,
+      id: 2,
       title: 'Iron Edge VIP Gym',
       category: 'Fitness & Gym',
       description: 'A high-conversion gym landing page featuring a bold hero section, membership packages, trainer showcases, and direct WhatsApp inquiry integration.',
@@ -104,39 +54,19 @@ const Works = () => {
       tags: ['Landing Page', 'WhatsApp', 'SEO', 'Responsive'],
       stats: { type: 'Landing Page', turnaround: '7 Days' },
     },
-    // ── 8 ──
+    // ── 3 ──
     {
-      id: 8,
-      title: 'Frontend Project',
-      category: 'Web Development',
-      description: 'A polished web development project showcasing modern frontend architecture, responsive layouts, and smooth UI interactions crafted for an optimal user experience.',
+      id: 3,
+      title: 'Kids & Junior',
+      category: 'Kids E-Commerce',
+      description: 'A vibrant and playful e-commerce store for kids and junior clothing, built with a fun design language, easy product browsing, and a smooth checkout experience.',
       url: 'https://frontend-blond-five-96.vercel.app/',
-      tags: ['Frontend', 'Responsive', 'Modern UI', 'Performance'],
-      stats: { type: 'Web Project', stack: 'Modern Stack' },
+      tags: ['E-Commerce', 'Kids', 'Responsive', 'Modern UI'],
+      stats: { type: 'E-Commerce', audience: 'Kids & Juniors' },
     },
-    // ── 9 ── SEO & Security
+    // ── 4 ──
     {
-      id: 9,
-      title: 'Lanka Cyber News',
-      category: 'Media / News',
-      description: 'Delivered comprehensive SEO optimisation and security hardening for this leading Sri Lankan tech news portal, significantly improving search visibility and site safety.',
-      url: 'http://lankacybernews.lk/',
-      tags: ['SEO', 'Security', 'News Portal', 'Sri Lanka'],
-      stats: { service: 'SEO + Security', market: 'Sri Lanka' },
-    },
-    // ── 10 ── SEO & Security
-    {
-      id: 10,
-      title: 'Newsora',
-      category: 'Media / News',
-      description: 'Performed in-depth SEO strategy and security vulnerability fixes for Newsora, boosting organic rankings and protecting the platform from common web threats.',
-      url: 'https://newsora.lk/',
-      tags: ['SEO', 'Security', 'News Portal', 'Performance'],
-      stats: { service: 'SEO + Security', result: 'Top Rankings' },
-    },
-    // ── 11 ── Extreme Vibe gym
-    {
-      id: 11,
+      id: 4,
       title: 'Extreme Vibe Fitness',
       category: 'Fitness & Gym',
       description: 'A professional multi-page gym website with gallery, blog, membership plans, and a research-based UX structure built to increase member sign-ups.',
@@ -144,9 +74,49 @@ const Works = () => {
       tags: ['Business Website', 'Gallery', 'Blog', 'SEO'],
       stats: { type: 'Business Site', pages: '6 Pages' },
     },
-    // ── 12 ── Sky Gym
+    // ── 5 ──
     {
-      id: 12,
+      id: 5,
+      title: 'Mini Bazaar',
+      category: 'E-Commerce',
+      description: 'A feature-rich online marketplace built for seamless buying and selling, with product listings, search filters, and a clean mobile-first shopping experience.',
+      url: 'https://minibazaar-two.vercel.app/',
+      tags: ['E-Commerce', 'Marketplace', 'Responsive', 'SEO'],
+      stats: { type: 'Marketplace', design: 'Mobile-First' },
+    },
+    // ── 6 ──
+    {
+      id: 6,
+      title: 'Luma.lk',
+      category: 'Lifestyle & Retail',
+      description: 'An elegant lifestyle brand website for a Sri Lankan retailer, featuring product showcases, brand storytelling, and a refined visual experience that elevates the brand.',
+      url: 'https://www.luma.lk/',
+      tags: ['Lifestyle', 'Retail', 'Branding', 'Responsive'],
+      stats: { type: 'Brand Website', market: 'Sri Lanka' },
+    },
+    // ── 7 ──
+    {
+      id: 7,
+      title: 'SNL.lk',
+      category: 'Corporate',
+      description: 'A professional corporate website for a leading Sri Lankan business, designed with credibility-focused UI, clean content hierarchy, and strong brand identity.',
+      url: 'https://www.snl.lk/',
+      tags: ['Corporate', 'Branding', 'SEO', 'Responsive'],
+      stats: { type: 'Corporate Site', market: 'Sri Lanka' },
+    },
+    // ── 8 ──
+    {
+      id: 8,
+      title: 'Techfore Store',
+      category: 'Technology / E-Commerce',
+      description: 'A modern tech product store with a structured product catalogue, category filtering, and a performance-optimised frontend built for high conversion rates.',
+      url: 'https://techfore-store-3pvk8106.devinapps.com/',
+      tags: ['E-Commerce', 'Tech Products', 'Performance', 'SEO'],
+      stats: { type: 'Tech Store', optimised: 'High-Speed' },
+    },
+    // ── 9 ──
+    {
+      id: 9,
       title: 'Sky Gym',
       category: 'Fitness & Gym',
       description: 'A sleek and modern gym website designed for premium branding, featuring smooth animations, membership tiers, and a fully responsive mobile layout.',
@@ -154,7 +124,37 @@ const Works = () => {
       tags: ['Premium Design', 'Animations', 'Mobile-First', 'SEO'],
       stats: { type: 'Gym Website', design: 'Premium' },
     },
-    // ── 13–16 ── original dummy projects (kept as-is)
+    // ── 10 ──
+    {
+      id: 10,
+      title: 'OSRO Hospital',
+      category: 'Healthcare',
+      description: 'A professional private hospital website built to build patient trust, with department listings, doctor profiles, appointment inquiry forms, and a compassionate design language.',
+      url: 'https://osro-osro-hospital.vercel.app/',
+      tags: ['Healthcare', 'Hospital', 'Responsive', 'SEO'],
+      stats: { type: 'Private Hospital', sector: 'Healthcare' },
+    },
+    // ── 11 ──
+    {
+      id: 11,
+      title: 'Lanka Cyber News',
+      category: 'Media / News',
+      description: 'Delivered comprehensive SEO optimisation and security hardening for this leading Sri Lankan tech news portal, significantly improving search visibility and site safety.',
+      url: 'http://lankacybernews.lk/',
+      tags: ['SEO', 'Security', 'News Portal', 'Sri Lanka'],
+      stats: { service: 'SEO + Security', market: 'Sri Lanka' },
+    },
+    // ── 12 ──
+    {
+      id: 12,
+      title: 'Newsora',
+      category: 'Media / News',
+      description: 'Performed in-depth SEO strategy and security vulnerability fixes for Newsora, boosting organic rankings and protecting the platform from common web threats.',
+      url: 'https://newsora.lk/',
+      tags: ['SEO', 'Security', 'News Portal', 'Performance'],
+      stats: { service: 'SEO + Security', result: 'Top Rankings' },
+    },
+    // ── 13–16 ── dummy projects
     {
       id: 13,
       title: 'E-Commerce Revolution',
