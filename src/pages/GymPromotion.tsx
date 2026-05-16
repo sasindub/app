@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Check, Star, MessageCircle, ChevronRight, Monitor, ExternalLink } from 'lucide-react'
+import { Check, Star, MessageCircle, ChevronRight, Monitor, ExternalLink, LayoutDashboard, UserCheck, Layers, Building2, Activity } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
 
@@ -271,49 +271,6 @@ const GymPromotion = () => {
           </div>
         </section>
 
-        {/* Our Works showcase */}
-        <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-12 xl:px-20 overflow-hidden">
-          <div className="max-w-7xl mx-auto">
-            <RevealSection>
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-                <div>
-                  <div className="flex items-center gap-2 text-cyan-400 text-sm font-medium mb-2">
-                    <Monitor className="w-4 h-4" />
-                    Our Portfolio
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white">
-                    Gym Websites We've Built
-                  </h2>
-                  <p className="text-slate-400 text-sm mt-2 max-w-md">
-                    A glimpse at the professional gym websites we've crafted — each one designed to convert visitors into members.
-                  </p>
-                </div>
-                <button
-                  onClick={() => {
-                    navigate('/#works')
-                    setTimeout(() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' }), 100)
-                  }}
-                  className="flex-shrink-0 flex items-center gap-1 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
-                >
-                  View All Works <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </RevealSection>
-
-            <div className="relative">
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-navy-950/80 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-navy-950/80 to-transparent z-10 pointer-events-none" />
-              <div className="flex gap-8 overflow-x-auto pb-6 scrollbar-hide px-2 snap-x snap-mandatory">
-                {gymWorks.map((work) => (
-                  <div key={work.title} className="snap-start">
-                    <LaptopMockup work={work} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Packages */}
         <section className="py-16 px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="max-w-7xl mx-auto">
@@ -418,6 +375,49 @@ const GymPromotion = () => {
           </div>
         </section>
 
+        {/* Our Works showcase — now below packages */}
+        <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-12 xl:px-20 overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <RevealSection>
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <div>
+                  <div className="flex items-center gap-2 text-cyan-400 text-sm font-medium mb-2">
+                    <Monitor className="w-4 h-4" />
+                    Our Portfolio
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white">
+                    Gym Websites We've Built
+                  </h2>
+                  <p className="text-slate-400 text-sm mt-2 max-w-md">
+                    A glimpse at the professional gym websites we've crafted — each one designed to convert visitors into members.
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    navigate('/#works')
+                    setTimeout(() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' }), 100)
+                  }}
+                  className="flex-shrink-0 flex items-center gap-1 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
+                >
+                  View All Works <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </RevealSection>
+
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-navy-950/80 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-navy-950/80 to-transparent z-10 pointer-events-none" />
+              <div className="flex gap-8 overflow-x-auto pb-6 scrollbar-hide px-2 snap-x snap-mandatory">
+                {gymWorks.map((work) => (
+                  <div key={work.title} className="snap-start">
+                    <LaptopMockup work={work} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose Us */}
         <section className="py-16 px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="max-w-7xl mx-auto">
@@ -461,6 +461,127 @@ const GymPromotion = () => {
                   </div>
                 </div>
               </div>
+            </RevealSection>
+          </div>
+        </section>
+
+        {/* Gym Systems */}
+        <section className="py-20 px-4 sm:px-6 lg:px-12 xl:px-20">
+          <div className="max-w-7xl mx-auto">
+            <RevealSection>
+              <div className="text-center mb-14">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/25 bg-cyan-500/8 text-cyan-400 text-xs font-medium mb-4">
+                  <Activity className="w-3.5 h-3.5" />
+                  Software Solutions
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-3">
+                  Smart Systems for Your Gym
+                </h2>
+                <p className="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
+                  Beyond a great website, we build the digital infrastructure that runs your fitness business — from billing and member management to trainer tracking and multi-branch control.
+                </p>
+              </div>
+            </RevealSection>
+
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                {
+                  Icon: LayoutDashboard,
+                  title: 'Gym Management System',
+                  tagline: 'Run your entire gym from one dashboard.',
+                  desc: 'Centralise members, payments, schedules, and staff in a single platform. Cut admin time and keep operations running without friction.',
+                  features: ['Member management', 'Automated billing', 'Class scheduling', 'Staff & payroll', 'Analytics reports'],
+                  iconColor: 'text-cyan-400',
+                  iconBg: 'bg-cyan-500/10',
+                  border: 'border-cyan-500/15',
+                },
+                {
+                  Icon: UserCheck,
+                  title: 'Personal Training Management',
+                  tagline: 'Built for trainers who want to scale.',
+                  desc: 'Handle client onboarding, session scheduling, progress tracking, and payments — all from a single PT-focused platform that keeps your clients accountable.',
+                  features: ['Client onboarding', 'Session scheduling', 'Workout plans', 'Progress tracking', 'Payment management'],
+                  iconColor: 'text-blue-400',
+                  iconBg: 'bg-blue-500/10',
+                  border: 'border-blue-500/15',
+                },
+                {
+                  Icon: Layers,
+                  title: 'All-in-One GMS',
+                  tagline: 'The complete gym operating system.',
+                  desc: 'Our most powerful solution — member lifecycle management, digital contracts & waivers, automated recurring billing, staff payroll, role-based access control, and multi-location analytics dashboards in one platform.',
+                  features: ['Member lifecycle', 'Digital contracts & waivers', 'Recurring billing', 'Role-based access', 'Multi-location analytics', 'Staff payroll'],
+                  iconColor: 'text-cyan-400',
+                  iconBg: 'bg-cyan-500/10',
+                  border: 'border-cyan-400/30',
+                  featured: true,
+                },
+                {
+                  Icon: Building2,
+                  title: 'Multi-Branch GMS',
+                  tagline: 'One system. Multiple locations.',
+                  desc: 'Scale your gym brand across cities with centralised control, inter-branch reporting, and location-specific settings — all managed from a single admin panel.',
+                  features: ['Centralised control', 'Inter-branch reports', 'Location-specific settings', 'Shared member database', 'Branch dashboards'],
+                  iconColor: 'text-blue-400',
+                  iconBg: 'bg-blue-500/10',
+                  border: 'border-blue-500/15',
+                },
+                {
+                  Icon: Activity,
+                  title: 'PT Client Tracking System',
+                  tagline: 'Coach better. Track smarter.',
+                  desc: 'Purpose-built for personal trainers — log workouts, track body metrics, monitor adherence, and keep clients on target with visual goal timelines and accountability tools.',
+                  features: ['Workout & progress logs', 'Body metrics tracking', 'Goal timelines', 'Adherence reports', 'Client accountability'],
+                  iconColor: 'text-cyan-400',
+                  iconBg: 'bg-cyan-500/10',
+                  border: 'border-cyan-500/15',
+                },
+              ].map((sys) => (
+                <RevealSection
+                  key={sys.title}
+                  className={`w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] ${sys.featured ? 'lg:ring-1 lg:ring-cyan-500/30' : ''}`}
+                >
+                  <div className={`h-full glass-card rounded-2xl border ${sys.border} p-6 flex flex-col gap-4 card-hover transition-all duration-300 ${sys.featured ? 'relative overflow-hidden' : ''}`}>
+                    {sys.featured && (
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                    )}
+
+                    {/* Icon */}
+                    <div className={`w-11 h-11 rounded-xl ${sys.iconBg} flex items-center justify-center flex-shrink-0`}>
+                      <sys.Icon className={`w-5 h-5 ${sys.iconColor}`} />
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <h3 className="font-heading font-bold text-white text-base mb-0.5">{sys.title}</h3>
+                      <p className={`text-xs font-medium ${sys.iconColor} mb-2`}>{sys.tagline}</p>
+                      <p className="text-slate-400 text-sm leading-relaxed">{sys.desc}</p>
+                    </div>
+
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+                      {sys.features.map(f => (
+                        <span key={f} className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-white/5 border border-white/8 text-slate-400">
+                          <Check className="w-2.5 h-2.5 text-cyan-400 flex-shrink-0" />
+                          {f}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </RevealSection>
+              ))}
+            </div>
+
+            {/* Systems CTA */}
+            <RevealSection className="mt-12 text-center">
+              <p className="text-slate-400 text-sm mb-4">Interested in a management system for your gym?</p>
+              <Button
+                onClick={() => window.open('https://wa.me/94774186332?text=' + encodeURIComponent('Hi TIOSS! I\'m interested in a gym management system. Can you share more details?'), '_blank')}
+                className="inline-flex items-center gap-2 bg-cyan-500 text-navy-950 hover:bg-cyan-400 font-bold px-7 py-2.5 rounded-xl"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Discuss Your System
+              </Button>
             </RevealSection>
           </div>
         </section>
