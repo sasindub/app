@@ -1,6 +1,7 @@
 import Hero from '../sections/Hero'
 import About from '../sections/About'
 import Services from '../sections/Services'
+import TechStack from '../sections/TechStack'
 import Works from '../sections/Works'
 import FAQ from '../components/FAQ'
 import Contact from '../sections/Contact'
@@ -70,6 +71,7 @@ const Home = () => {
         <Hero />
         <About />
         <Services />
+        <TechStack />
         <Works />
         <FAQ />
         <Contact />
