@@ -3,13 +3,131 @@ import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-reac
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
 
+/* ── Laptop mockup for URL-based projects ── */
+function LaptopPreview({
+  url,
+  title,
+  onPrev,
+  onNext,
+}: {
+  url: string
+  title: string
+  onPrev: (e: React.MouseEvent) => void
+  onNext: (e: React.MouseEvent) => void
+}) {
+  const screenRef = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(0.38)
+
+  useEffect(() => {
+    const el = screenRef.current
+    if (!el) return
+    const ro = new ResizeObserver(([entry]) => {
+      setScale(entry.contentRect.width / 1280)
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  return (
+    <div className="relative h-full flex items-center justify-center px-8 py-6 overflow-hidden group">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-900/80 via-navy-950 to-navy-950" />
+      {/* Glow blob behind screen */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-80 h-48 bg-cyan-500/10 rounded-full blur-[60px] pointer-events-none transition-all duration-500 group-hover:bg-cyan-500/18" />
+
+      {/* Laptop wrapper */}
+      <div className="relative w-full z-10">
+
+        {/* ── Screen lid ── */}
+        <div
+          className="relative rounded-t-xl overflow-hidden border-2 border-slate-600/70 bg-slate-900 shadow-[0_20px_60px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_40px_rgba(6,182,212,0.15)] group-hover:border-cyan-500/30"
+        >
+          {/* Camera dot */}
+          <div className="flex justify-center items-center py-1.5 bg-slate-900">
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-600/80" />
+          </div>
+
+          {/* Browser chrome */}
+          <div className="flex items-center gap-1.5 bg-slate-800/90 border-t border-b border-slate-700/60 px-3 py-1.5">
+            <div className="w-2 h-2 rounded-full bg-red-400/80 flex-shrink-0" />
+            <div className="w-2 h-2 rounded-full bg-yellow-400/80 flex-shrink-0" />
+            <div className="w-2 h-2 rounded-full bg-green-400/80 flex-shrink-0" />
+            <div className="flex-1 min-w-0 bg-slate-700/60 rounded px-2.5 py-0.5 ml-2 border border-slate-600/40">
+              <span className="text-slate-400 text-[9px] truncate block leading-tight">{url}</span>
+            </div>
+          </div>
+
+          {/* iframe viewport */}
+          <div
+            ref={screenRef}
+            className="relative overflow-hidden bg-white"
+            style={{ aspectRatio: '16 / 9' }}
+          >
+            <iframe
+              key={url}
+              src={url}
+              title={title}
+              loading="lazy"
+              style={{
+                width: '1280px',
+                height: '720px',
+                transform: `scale(${scale})`,
+                transformOrigin: 'top left',
+                pointerEvents: 'none',
+                border: 'none',
+                display: 'block',
+              }}
+            />
+
+            {/* Hover overlay */}
+            <div
+              className="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/50 transition-all duration-300 flex items-center justify-center cursor-pointer"
+              onClick={() => window.open(url, '_blank')}
+            >
+              <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 bg-cyan-500 text-navy-950 font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm shadow-glow">
+                <ExternalLink className="w-4 h-4" />
+                Visit Website
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Hinge ── */}
+        <div className="h-2.5 bg-gradient-to-b from-slate-600/80 to-slate-700/80 border-x-2 border-slate-600/50" />
+
+        {/* ── Base / keyboard area ── */}
+        <div className="relative h-5 bg-gradient-to-b from-slate-700/90 to-slate-800/90 rounded-b-xl border-x-2 border-b-2 border-slate-600/50 mx-[-3px] flex items-center justify-center">
+          <div className="w-14 h-2 rounded-sm bg-slate-600/40 border border-slate-500/20" />
+        </div>
+
+        {/* Reflection line */}
+        <div className="h-px mx-6 mt-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full" />
+      </div>
+
+      {/* Nav arrows — bottom-left of the panel */}
+      <div className="absolute bottom-4 left-4 flex gap-2 z-30">
+        <button
+          onClick={onPrev}
+          className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-cyan-500/20 transition-colors"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={onNext}
+          className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-cyan-500/20 transition-colors"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  )
+}
+
 const Works = () => {
-  const sectionRef    = useRef<HTMLDivElement>(null)
-  const featuredRef   = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible]     = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible]         = useState(false)
   const [activeProject, setActiveProject] = useState(0)
-  const [isPaused, setIsPaused]       = useState(false)
-  const [iframeScale, setIframeScale] = useState(1)
+  const [isPaused, setIsPaused]           = useState(false)
   const navigate = useNavigate()
 
   /* Observe section entrance */
@@ -20,17 +138,6 @@ const Works = () => {
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
-  }, [])
-
-  /* Dynamic iframe scale — fills featured card width exactly */
-  useEffect(() => {
-    const el = featuredRef.current
-    if (!el) return
-    const ro = new ResizeObserver(([entry]) => {
-      setIframeScale(entry.contentRect.width / 1280)
-    })
-    ro.observe(el)
-    return () => ro.disconnect()
   }, [])
 
   const projects = [
@@ -253,52 +360,16 @@ const Works = () => {
 
             <div className="grid lg:grid-cols-2 lg:h-[460px]">
 
-              {/* Left — iframe or image, fills column */}
-              <div ref={featuredRef} className="relative h-64 lg:h-full overflow-hidden group">
+              {/* Left — laptop mockup (URL) or image (no URL) */}
+              <div className="relative h-64 lg:h-full overflow-hidden">
                 {current.url ? (
-                  <>
-                    <div className="absolute inset-0 bg-navy-950">
-                      <iframe
-                        key={current.url}
-                        src={current.url}
-                        title={current.title}
-                        loading="lazy"
-                        style={{
-                          width: '1280px',
-                          height: '1024px',
-                          transform: `scale(${iframeScale})`,
-                          transformOrigin: 'top left',
-                          pointerEvents: 'none',
-                          border: 'none',
-                          display: 'block',
-                        }}
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/40 to-transparent lg:from-transparent lg:via-navy-950/40 lg:to-navy-950/80 z-10 pointer-events-none" />
-                    <div
-                      className="absolute inset-0 z-20 cursor-pointer flex items-center justify-center"
-                      onClick={() => window.open(current.url, '_blank')}
-                    >
-                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 bg-cyan-500 text-navy-950 font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm shadow-glow">
-                        <ExternalLink className="w-4 h-4" />
-                        Visit Website
-                      </div>
-                    </div>
-                    <div className="absolute bottom-4 left-4 flex gap-2 z-30">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); prevProject() }}
-                        className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-cyan-500/20 transition-colors"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); nextProject() }}
-                        className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:bg-cyan-500/20 transition-colors"
-                      >
-                        <ChevronRight className="w-5 h-5" />
-                      </button>
-                    </div>
-                  </>
+                  <LaptopPreview
+                    key={current.url}
+                    url={current.url}
+                    title={current.title}
+                    onPrev={(e) => { e.stopPropagation(); prevProject() }}
+                    onNext={(e) => { e.stopPropagation(); nextProject() }}
+                  />
                 ) : (
                   <>
                     <img

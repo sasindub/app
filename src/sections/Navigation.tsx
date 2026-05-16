@@ -20,6 +20,7 @@ const Navigation = ({ scrollY }: NavigationProps) => {
     { id: 'services', label: 'Services' },
     { id: 'works', label: 'Our Works' },
     { id: 'contact', label: 'Contact' },
+    { id: '/portfolio', label: 'Portfolio', isRoute: true },
     { id: '/blogs', label: 'Blogs', isRoute: true },
     { id: '/promotions/gym-website-packages', label: 'Promotions', isRoute: true },
   ]

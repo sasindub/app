@@ -11,6 +11,7 @@ import SoftwareCompanySriLanka from './pages/SoftwareCompanySriLanka'
 import AiSolutionsSriLanka from './pages/AiSolutionsSriLanka'
 import Blogs from './pages/Blogs'
 import GymPromotion from './pages/GymPromotion'
+import Portfolio from './pages/Portfolio'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -56,6 +57,7 @@ function Layout() {
         <Route path="/ai-solutions-sri-lanka" element={<AiSolutionsSriLanka />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/promotions/gym-website-packages" element={<GymPromotion />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
 
       <Footer />
